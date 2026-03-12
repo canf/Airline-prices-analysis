@@ -1,43 +1,10 @@
-# ✈️ Airline Ticket Prices — Data Analytics Portfolio
+ Airline Ticket Prices — Data Analytics 
 
 An end-to-end data analytics project using **Python**, **SQLite (SQL)**, **Pandas**, and **Matplotlib** to explore 250 international airline ticket records.
 
 ---
 
-## 📁 Project Structure
-
-```
-airline_project/
-├── analysis.py                        # Main analysis script
-├── airline_ticket_prices_dataset.csv  # Dataset (250 records)
-├── requirements.txt                   # Python dependencies
-├── README.md                          # This file
-└── output/                            # Auto-generated charts
-    ├── q1_avg_price_by_airline.png
-    ├── q2_price_by_class.png
-    ├── q3_booking_timing.png
-    ├── q4_top_routes.png
-    └── q5_value_per_km.png
-```
-
----
-
-## 📊 Dataset
-
-| Column                  | Type    | Description                         |
-|-------------------------|---------|-------------------------------------|
-| `Ticket_ID`             | int     | Unique ticket identifier            |
-| `Airline`               | string  | Carrier name (8 airlines)           |
-| `Origin`                | string  | Departure city                      |
-| `Destination`           | string  | Arrival city                        |
-| `Distance_km`           | int     | Route distance in kilometres        |
-| `Class`                 | string  | Economy / Business / First          |
-| `Days_Before_Departure` | int     | Booking lead time (days)            |
-| `Price_USD`             | float   | Ticket price in US dollars          |
-
----
-
-## ❓ Questions & Key Findings
+##  Questions & Key Findings
 
 | # | Question | Finding |
 |---|----------|---------|
@@ -49,27 +16,6 @@ airline_project/
 
 ---
 
-## 🚀 How to Run
-
-### 1. Clone / download the project
-```bash
-git clone https://github.com/your-username/airline-analytics.git
-cd airline-analytics
-```
-
-### 2. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the analysis
-```bash
-python analysis.py
-```
-
-Charts are saved to the `output/` folder automatically.
-
----
 
 ## 🛠️ Tech Stack
 
@@ -83,7 +29,7 @@ Charts are saved to the `output/` folder automatically.
 
 ## 📝 SQL Queries
 
-### Q1 — Average price by airline
+### Average price by airline
 ```sql
 SELECT Airline,
        ROUND(AVG(Price_USD), 2) AS Avg_Price,
@@ -93,7 +39,7 @@ GROUP  BY Airline
 ORDER  BY Avg_Price DESC;
 ```
 
-### Q2 — Price stats by class
+### Price stats by class
 ```sql
 SELECT Class,
        ROUND(AVG(Price_USD), 2) AS Avg_Price,
@@ -104,7 +50,7 @@ GROUP  BY Class
 ORDER  BY Avg_Price DESC;
 ```
 
-### Q3 — Booking timing vs price
+### Booking timing vs price
 ```sql
 SELECT Days_Before_Departure,
        ROUND(AVG(Price_USD), 2) AS Avg_Price,
@@ -114,7 +60,7 @@ GROUP  BY Days_Before_Departure, Class
 ORDER  BY Days_Before_Departure;
 ```
 
-### Q4 — Top 10 most expensive routes
+### Top 10 most expensive routes
 ```sql
 SELECT Origin || ' → ' || Destination AS Route,
        ROUND(AVG(Price_USD), 2)        AS Avg_Price,
@@ -126,7 +72,7 @@ ORDER  BY Avg_Price DESC
 LIMIT  10;
 ```
 
-### Q5 — Value per kilometre by class
+###  Value per kilometre by class
 ```sql
 SELECT Class,
        ROUND(AVG(Price_USD / Distance_km), 4) AS Price_Per_Km,
@@ -137,7 +83,4 @@ GROUP  BY Class
 ORDER  BY Price_Per_Km;
 ```
 
----
 
-## 📄 License
-MIT — free to use and modify for your own portfolio.
