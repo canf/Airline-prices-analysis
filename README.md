@@ -17,7 +17,7 @@ An end-to-end data analytics project using **Python**, **SQLite (SQL)**, **Panda
 ---
 
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Python 3.9+**
 - **SQLite** — in-memory database for SQL queries
@@ -27,7 +27,7 @@ An end-to-end data analytics project using **Python**, **SQLite (SQL)**, **Panda
 
 ---
 
-## 📝 SQL Queries
+## SQL Queries
 
 ### Average price by airline
 ```sql
